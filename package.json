@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "test:db": "node scripts/test-db-connection.mjs",
+    "test:auth": "node scripts/test-auth-endpoints.mjs",
+    "test:crud": "node scripts/test-crud-endpoints.mjs",
+    "test:upload": "node scripts/test-upload-signature.mjs",
     "dev": "node --watch src/server.js",
     "start": "node src/server.js"
   },
