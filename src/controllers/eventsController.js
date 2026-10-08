@@ -50,6 +50,7 @@ export async function getEventBySlugOrId(req, res, next) {
     res.json({
       success: true,
       event,
+      data: event,
     });
   } catch (err) {
     next(err);
@@ -70,6 +71,7 @@ export async function getAllEventsAdmin(req, res, next) {
       success: true,
       count: result.rows.length,
       events: result.rows,
+      data: result.rows,
     });
   } catch (err) {
     next(err);

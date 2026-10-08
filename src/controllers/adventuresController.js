@@ -61,6 +61,7 @@ export async function getAdventureBySlugOrId(req, res, next) {
     res.json({
       success: true,
       adventure,
+      data: adventure,
     });
   } catch (err) {
     next(err);
@@ -81,6 +82,7 @@ export async function getAllAdventuresAdmin(req, res, next) {
       success: true,
       count: result.rows.length,
       adventures: result.rows,
+      data: result.rows,
     });
   } catch (err) {
     next(err);

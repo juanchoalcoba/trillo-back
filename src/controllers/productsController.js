@@ -61,6 +61,7 @@ export async function getProductBySlugOrId(req, res, next) {
     res.json({
       success: true,
       product,
+      data: product,
     });
   } catch (err) {
     next(err);
@@ -81,6 +82,7 @@ export async function getAllProductsAdmin(req, res, next) {
       success: true,
       count: result.rows.length,
       products: result.rows,
+      data: result.rows,
     });
   } catch (err) {
     next(err);
