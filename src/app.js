@@ -5,6 +5,10 @@ import dotenv from 'dotenv';
 import { query } from './config/db.js';
 import { errorHandler, notFoundHandler } from './middlewares/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
+import eventsRoutes from './routes/eventsRoutes.js';
+import adventuresRoutes from './routes/adventuresRoutes.js';
+import productsRoutes from './routes/productsRoutes.js';
+import uploadRoutes from './routes/uploadRoutes.js';
 
 dotenv.config();
 
@@ -57,8 +61,12 @@ app.get('/', (req, res) => {
   });
 });
 
-// 4. Rutas de autenticación administrativa
+// 4. Rutas de la API
 app.use('/api/auth', authRoutes);
+app.use('/api/events', eventsRoutes);
+app.use('/api/adventures', adventuresRoutes);
+app.use('/api/products', productsRoutes);
+app.use('/api/uploads', uploadRoutes);
 
 // 5. Endpoint de Salud y Diagnóstico de Base de Datos
 app.get('/api/health', async (req, res, next) => {
