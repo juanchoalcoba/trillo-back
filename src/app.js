@@ -9,6 +9,7 @@ import eventsRoutes from './routes/eventsRoutes.js';
 import adventuresRoutes from './routes/adventuresRoutes.js';
 import productsRoutes from './routes/productsRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
+import clubPlansRoutes from './routes/clubPlansRoutes.js';
 
 dotenv.config();
 
@@ -67,6 +68,8 @@ app.use('/api/events', eventsRoutes);
 app.use('/api/adventures', adventuresRoutes);
 app.use('/api/products', productsRoutes);
 app.use('/api/uploads', uploadRoutes);
+app.use('/api/club-plans', clubPlansRoutes);
+
 
 // 5. Endpoint de Salud y Diagnóstico de Base de Datos
 app.get('/api/health', async (req, res, next) => {
